@@ -1,47 +1,17 @@
 [
   {
-    "name": "Kovinski kip - Konj",
-    "description": "Ročno izdelan bronasti odlitek.",
-    "price": 120,
     "category": "odlitki",
-    "image": "images/kip.jpg"
-  },
-  {
-    "name": "Srebrni prstan",
-    "description": "Ročno izdelan prstan iz srebra.",
-    "price": 45,
-    "category": "nakit",
-    "image": "images/prstan.jpg"
-  },
-  {
-    "name": "Zlati investicijski kovanec",
-    "description": "1 oz zlati kovanec čistine 999.9.",
-    "price": 2200,
-    "category": "kovanci",
-    "image": "images/kovanec.jpg"
-  },
-  {
-    "name": "Starinski bankovec",
-    "description": "Zbirateljski papirnati denar.",
-    "price": 55,
-    "category": "zbirateljski",
-    "image": "images/bankovec.jpg"
-  }
-]
-[
-  {
-    "category": "odlitki",
-    "image": "images/kip.jpg",
-    "price": 120,
     "name": {
-      "si": "Kovinski kip - Konj",
-      "en": "Metal Sculpture - Horse",
-      "de": "Metallskulptur - Pferd"
+      "si": "Bronasti odliv",
+      "en": "Bronze casting",
+      "de": "Bronzeguss"
     },
     "description": {
-      "si": "Ročno izdelan kovinski odlitek.",
-      "en": "Handcrafted metal casting.",
-      "de": "Handgefertigter Metallguss."
-    }
+      "si": "Ročno izdelan odlitek",
+      "en": "Handmade casting",
+      "de": "Handgefertigter Guss"
+    },
+    "price": 120,
+    "image": "images/odlitek.jpg"
   }
 ]
