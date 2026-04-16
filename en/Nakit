@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Nakit</h1>
+
+    <div class="language-switcher">
+        <a href="nakit.html">SI</a> |
+        <a href="en/nakit.html">EN</a> |
+        <a href="de/nakit.html">DE</a>
+    </div>
+
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="odlitki.html">Odlitki</a>
+        <a href="nakit.html">Nakit</a>
+        <a href="kovanci.html">Kovanci</a>
+        <a href="zbirateljski.html">Zbirateljski</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Nakit</h2>
+    <section class="ads">
+    <h3>💰 Naložbeni kovanci</h3>
+
+    <div class="ad-box">
+        <h4>Zlati kovanci</h4>
+        <p>24K investicijsko zlato</p>
+    </div>
+
+    <div class="ad-box">
+        <h4>Srebrni kovanci</h4>
+        <p>Idealni za zbiratelje</p>
+    </div>
+</section>
+    <div id="products-container"></div>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
