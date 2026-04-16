@@ -2,38 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const path = window.location.pathname;
 
-    // 🌍 JEZIK
-    let lang = "si";
-    if (path.includes("/en/")) lang = "en";
-    if (path.includes("/de/")) lang = "de";
+// 🌍 DETEKCIJA JEZIKA
+let lang = "si";
+if (path.includes("/en/")) lang = "en";
+if (path.includes("/de/")) lang = "de";
 
-    const file = path.split("/").pop().replace(".html", "");
+// 📄 trenutna stran
+const file = path.split("/").pop().replace(".html", "");
 
-    // 🧠 MAPA STRANI
-    const pageMap = {
-        // SI
-        odlitki: "odlitki",
-        nakit: "nakit",
-        kovanci: "kovanci",
-        zbirateljski: "zbirateljski",
+// 🧠 mapiranje strani (ISTO POVSOD)
+const pageMap = {
+    odlitki: "odlitki",
+    nakit: "nakit",
+    kovanci: "kovanci",
+    zbirateljski: "zbirateljski",
+    kontakt: "kontakt"
+};
 
-        // EN
-        castings: "odlitki",
-        jewelry: "nakit",
-        coins: "kovanci",
-        collectibles: "zbirateljski",
+const category = pageMap[file];
 
-        // DE
-        guss: "odlitki",
-        schmuck: "nakit",
-        muenzen: "kovanci",
-        sammlerstuecke: "zbirateljski"
-    };
-
-    const category = pageMap[file];
-
-    const isSub = path.includes("/en/") || path.includes("/de/");
-    const jsonPath = isSub ? "../products.json" : "products.json";
+// 📦 JSON pot (FIX ZA GITHUB)
+const jsonPath = path.includes("/en/") || path.includes("/de/")
+    ? "../products.json"
+    : "products.json";
 
     const container = document.getElementById("products-container");
     if (!container) return;
