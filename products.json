@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Kovinski kip - Konj",
+    "description": "Ročno izdelan bronasti odlitek.",
+    "price": 120,
+    "category": "odlitki",
+    "image": "images/kip.jpg"
+  },
+  {
+    "name": "Srebrni prstan",
+    "description": "Ročno izdelan prstan iz srebra.",
+    "price": 45,
+    "category": "nakit",
+    "image": "images/prstan.jpg"
+  },
+  {
+    "name": "Zlati investicijski kovanec",
+    "description": "1 oz zlati kovanec čistine 999.9.",
+    "price": 2200,
+    "category": "kovanci",
+    "image": "images/kovanec.jpg"
+  },
+  {
+    "name": "Starinski bankovec",
+    "description": "Zbirateljski papirnati denar.",
+    "price": 55,
+    "category": "zbirateljski",
+    "image": "images/bankovec.jpg"
+  }
+]
