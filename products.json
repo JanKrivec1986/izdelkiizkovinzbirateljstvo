@@ -28,3 +28,20 @@
     "image": "images/bankovec.jpg"
   }
 ]
+[
+  {
+    "category": "odlitki",
+    "image": "images/kip.jpg",
+    "price": 120,
+    "name": {
+      "si": "Kovinski kip - Konj",
+      "en": "Metal Sculpture - Horse",
+      "de": "Metallskulptur - Pferd"
+    },
+    "description": {
+      "si": "Ročno izdelan kovinski odlitek.",
+      "en": "Handcrafted metal casting.",
+      "de": "Handgefertigter Metallguss."
+    }
+  }
+]
