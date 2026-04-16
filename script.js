@@ -28,5 +28,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 container.appendChild(card);
             });
         })
-        .catch(error => console.error('Napaka:', error));
+        .catch(error => console.error('Napaka pri nalaganju izdelkov:', error));
 });
