@@ -9,6 +9,7 @@ header {
     color: white;
     text-align: center;
     padding: 1rem;
+    position: relative;
 }
 
 nav a {
@@ -38,11 +39,16 @@ section {
     position: absolute;
     top: 10px;
     right: 20px;
+    z-index: 1000;
 }
 
 .language-switcher a {
     color: white;
-    margin-left: 10px;
     text-decoration: none;
     font-weight: bold;
+    margin-left: 10px;
+}
+
+.language-switcher a:hover {
+    text-decoration: underline;
 }
