@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Kovinske umetnine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Kontakt</h1>
+    <nav>
+        <a href="index.html">Domov</a>
+        <a href="odlitki.html">Kovinski odlitki</a>
+        <a href="nakit.html">Nakit</a>
+        <a href="kovanci.html">Naložbeni kovanci</a>
+        <a href="zbirateljski.html">Zbirateljski artikli</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+</header>
+
+<section class="contact">
+    <h2>Stopite v stik z nami</h2>
+    <p>Za dodatne informacije ali povpraševanje nas kontaktirajte preko spodnjih podatkov.</p>
+
+    <div class="contact-info">
+        <p><strong>Ime podjetja:</strong> Vaše podjetje</p>
+        <p><strong>Email:</strong> <a href="mailto:info@tvojadomena.si">info@tvojadomena.si</a></p>
+        <p><strong>Telefon:</strong> +386 40 123 456</p>
+        <p><strong>Lokacija:</strong> Slovenija</p>
+    </div>
+
+    <h3>Kontaktni obrazec</h3>
+    <form action="mailto:info@tvojadomena.si" method="post" enctype="text/plain">
+        <label for="name">Ime:</label><br>
+        <input type="text" id="name" name="Ime" required><br><br>
+
+        <label for="email">E-pošta:</label><br>
+        <input type="email" id="email" name="Email" required><br><br>
+
+        <label for="message">Sporočilo:</label><br>
+        <textarea id="message" name="Sporočilo" rows="5" required></textarea><br><br>
+
+        <button type="submit">Pošlji</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 Kovinske umetnine in zbirateljski artikli</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
