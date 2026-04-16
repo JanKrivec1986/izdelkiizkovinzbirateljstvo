@@ -2,102 +2,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const path = window.location.pathname;
 
-    // 🌍 DETEKCIJA JEZIKA
+    // 🌍 JEZIK
     let lang = "si";
     if (path.includes("/en/")) lang = "en";
     if (path.includes("/de/")) lang = "de";
 
-    // 📄 IME STRANI (odlitki.html → odlitki)
-    const page = path.split("/").pop().replace(".html", "");
+    const file = path.split("/").pop().replace(".html", "");
 
-    // 📁 POT DO JSON (VAŽNO ZA GITHUB PAGES)
-    const isSubfolder = path.includes("/en/") || path.includes("/de/");
-    const jsonPath = isSubfolder ? "../products.json" : "products.json";
-
-    // 🧠 MAPA KATEGORIJ (SI / EN / DE)
-    const categoryMap = {
-        // 🇸🇮
+    // 🧠 MAPA STRANI
+    const pageMap = {
+        // SI
         odlitki: "odlitki",
         nakit: "nakit",
         kovanci: "kovanci",
         zbirateljski: "zbirateljski",
 
-        // 🇬🇧
+        // EN
         castings: "odlitki",
         jewelry: "nakit",
         coins: "kovanci",
         collectibles: "zbirateljski",
 
-        // 🇩🇪
+        // DE
         guss: "odlitki",
         schmuck: "nakit",
         muenzen: "kovanci",
         sammlerstuecke: "zbirateljski"
     };
 
-    const category = categoryMap[page];
+    const category = pageMap[file];
+
+    const isSub = path.includes("/en/") || path.includes("/de/");
+    const jsonPath = isSub ? "../products.json" : "products.json";
 
     const container = document.getElementById("products-container");
     if (!container) return;
 
     fetch(jsonPath)
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Ne najdem products.json");
-            }
-            return res.json();
-        })
+        .then(res => res.json())
         .then(products => {
 
-            // 🧹 filtriranje
-            const filteredProducts = category
+            const filtered = category
                 ? products.filter(p => p.category === category)
                 : products;
 
-            // ❗ če ni izdelkov
-            if (filteredProducts.length === 0) {
-                container.innerHTML = `<p>Trenutno ni izdelkov v tej kategoriji.</p>`;
-                return;
-            }
+            container.innerHTML = "";
 
-            // 🧱 render kartic
-            filteredProducts.forEach(product => {
+            filtered.forEach(p => {
 
-                const card = document.createElement("div");
-                card.className = "product";
+                const name = typeof p.name === "object" ? p.name[lang] : p.name;
+                const desc = typeof p.description === "object" ? p.description[lang] : p.description;
 
-                // 🧾 prevodi iz JSON (če obstajajo)
-                const name = typeof product.name === "object"
-                    ? product.name[lang]
-                    : product.name;
+                const img = isSub ? `../${p.image}` : p.image;
 
-                const description = typeof product.description === "object"
-                    ? product.description[lang]
-                    : product.description;
-
-                // 🖼️ pot do slike
-                const imagePath = isSubfolder
-                    ? `../${product.image}`
-                    : product.image;
-
-                card.innerHTML = `
-                    <img src="${imagePath}" alt="${name}">
-                    <h3>${name}</h3>
-                    <p>${description}</p>
-                    <p class="price">${product.price.toFixed(2)} €</p>
-                    <a href="mailto:info@tvojadomena.si?subject=${encodeURIComponent(name)}">
-                        <button>
-                            ${lang === "si" ? "Povpraševanje" : lang === "en" ? "Inquiry" : "Anfrage"}
-                        </button>
-                    </a>
+                container.innerHTML += `
+                    <div class="product">
+                        <img src="${img}">
+                        <h3>${name}</h3>
+                        <p>${desc}</p>
+                        <strong>${p.price} €</strong>
+                    </div>
                 `;
-
-                container.appendChild(card);
             });
 
         })
         .catch(err => {
-            console.error("Napaka:", err);
+            console.error(err);
             container.innerHTML = "<p>Napaka pri nalaganju izdelkov.</p>";
         });
 
